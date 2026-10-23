@@ -1,0 +1,6 @@
+{
+  "name": "BLOCK MANIA - 3D Puzzle Game & Brand Identity",
+  "description": "Original 3D casual block puzzle mobile game and brand identity featuring vibrant jewel blocks, combo mechanics, crown progression, and customizable game icon exports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, .font-game {
+    font-family: 'Fredoka', cursive, system-ui, sans-serif;
+  }
+}
+
+/* 3D Glossy Puzzle Block Styles */
+.block-3d {
+  position: relative;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+}
+
+.block-3d::before {
+  content: '';
+  position: absolute;
+  top: 6%;
+  left: 8%;
+  right: 8%;
+  height: 32%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 6px 6px 3px 3px;
+  pointer-events: none;
+}
+
+.block-3d::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18%;
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 0 0 8px 8px;
+  pointer-events: none;
+}
+
+/* Custom 3D push buttons */
+.btn-3d {
+  position: relative;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.35), 0 10px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.35), 0 4px 10px -2px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.04); }
+}
+
+@keyframes combo-popup {
+  0% { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+  45% { transform: scale(1.25) rotate(4deg); opacity: 1; }
+  75% { transform: scale(1.05) rotate(-2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.animate-combo-popup {
+  animation: combo-popup 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 9999px;
+}
